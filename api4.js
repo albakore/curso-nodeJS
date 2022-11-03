@@ -7,7 +7,7 @@ utilizando 3 rutas en estos formatos (Ejemplo con numeros 5 y 6).
 
     a) Ruta get 'api/sumar/5/6'
 
-    b) Ruta get 'api/sumar/?num1=5&num2=62'
+    b) Ruta get 'api/sumar?num1=5&num2=62'
 
     c) Ruta get 'api/operacion/5+6'
 
@@ -20,7 +20,7 @@ express = require('express');
 app = express();
 puerto = 8080;
 
-app.get('/api/sumar/', (req, res) => {
+app.get('/api/sumar', (req, res) => {
     const num1 = Number(req.query.num1);
     const num2 = Number(req.query.num2); 
     res.send(`La suma de las 2 rutas es : ${num1+num2}`)
